@@ -53,6 +53,7 @@
         shellHook = ''
           export LD_LIBRARY_PATH=${pkgs.stdenv.cc.cc.lib}/lib/
           export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath buildInputs}:$LD_LIBRARY_PATH"
+          export QT_AUTO_SCREEN_SCALE_FACTOR=1
           source .venv/bin/activate
         '';
       };
