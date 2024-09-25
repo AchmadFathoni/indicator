@@ -27,9 +27,11 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
       buildInputs = [
-        (pkgs.python3.withPackages (python-pkgs: [
+        (pkgs.python311.withPackages (python-pkgs: [
           python-pkgs.pip
           python-pkgs.virtualenv
+          python-pkgs.spyder
+          python-pkgs.pandas
         ]))
       # Matplotlib run dependency
         pkgs.glib
@@ -41,7 +43,6 @@
         pkgs.freetype
         pkgs.dbus
       # spyder
-        pkgs.spyder
         (pkgs.ta-lib.overrideAttrs (finalAttrs: previousAttrs: {
           prePatch = ''sed -i.bak "s|0.00000001|0.000000000000000001 |g" src/ta_func/ta_utility.h'';
         }))
