@@ -5,3 +5,4 @@ TA-Lib
 numpy==1.26.4
 pandas
 spyder-kernels==2.5.*
+jupyter
