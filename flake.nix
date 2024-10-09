@@ -35,6 +35,7 @@
       # Matplotlib run dependency
         pkgs.glib
         pkgs.zlib
+        pkgs.zstd
         pkgs.libGL
         pkgs.fontconfig
         pkgs.xorg.libX11

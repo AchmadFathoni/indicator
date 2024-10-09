@@ -1,6 +1,7 @@
 matplotlib
 pyarrow
 PyQt6
+PyQt6-qt6==6.7.2
 TA-Lib
 numpy==1.26.4
 pandas
