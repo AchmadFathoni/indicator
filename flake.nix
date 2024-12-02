@@ -15,7 +15,7 @@
   description = "Freqtrade crypto trading bot";
   inputs = {
     # or for unstable
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:AchmadFathoni/nixpkgs/nixos-24.11";
     flake-utils.url = "github:numtide/flake-utils";
   };
   outputs = {
@@ -38,10 +38,16 @@
         pkgs.zstd
         pkgs.libGL
         pkgs.fontconfig
-        pkgs.xorg.libX11
         pkgs.libxkbcommon
         pkgs.freetype
         pkgs.dbus
+        pkgs.xcb-util-cursor
+        pkgs.xorg.libX11
+        pkgs.xorg.libxcb
+        pkgs.xorg.xcbutilwm
+        pkgs.xorg.xcbutilimage
+        pkgs.xorg.xcbutilkeysyms
+        pkgs.xorg.xcbutilrenderutil
       # spyder
         (pkgs.ta-lib.overrideAttrs (finalAttrs: previousAttrs: {
           prePatch = ''sed -i.bak "s|0.00000001|0.000000000000000001 |g" src/ta_func/ta_utility.h'';
